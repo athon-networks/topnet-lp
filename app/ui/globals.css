@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: Geist, sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-poppins), Geist, sans-serif;
+}
+
+a {
+  transition: 0.2s ease;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2f7fb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0891b2;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0e7490;
+}
+
+:root {
+  --radius: 0.625rem;
+}
+
+.section-photo {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.section-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: var(--section-photo);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  transform: scale(1.02);
+}
+
+.section-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.95));
+}
+
+.section-photo--social {
+  --section-photo: url("/portfolioHeroProjects/hero_two.jpeg");
+}
+
+.section-photo--plans {
+  --section-photo: url("/portfolioHeroProjects/hero_four.jpeg");
+}
+
+.section-photo--services {
+  --section-photo: url("/server.avif");
+}
+
+.section-photo--faq {
+  --section-photo: url("/cards/card_four.avif");
+}

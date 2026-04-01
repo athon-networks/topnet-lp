@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "checkJs": false,
+    "allowJs": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
