@@ -472,7 +472,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-14">
+      <section className="hidden py-14 sm:block">
         <img
           src="/arte.png"
           alt="Arte promocional Topnet"
