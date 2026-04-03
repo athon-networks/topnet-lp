@@ -1,5 +1,4 @@
 import {
-  Building2,
   Facebook,
   Gamepad2,
   Headset,
@@ -14,6 +13,7 @@ import {
   Tv,
   Wifi,
 } from "lucide-react";
+import SiteHeader from "@/components/site-header";
 
 const stats = [
   { value: "7", label: "Cidades atendidas" },
@@ -207,41 +207,35 @@ export const metadata = {
 export default function Page() {
   return (
     <main className="bg-white text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-cyan-100/90 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-10">
-          <a href="#inicio" className="flex items-center gap-3">
-            <img src="/logos/topnet.png" alt="Topnet" className="h-15 w-auto" />
-          </a>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-            <a href="#inicio" className="transition hover:text-cyan-700">Início</a>
-            <a href="#planos" className="transition hover:text-cyan-700">Planos</a>
-            <a href="#servicos" className="transition hover:text-cyan-700">Serviços</a>
-            <a href="#sobre" className="transition hover:text-cyan-700">Sobre</a>
-            <a href="#cobertura" className="transition hover:text-cyan-700">Cobertura</a>
-            <a href="#contato" className="transition hover:text-cyan-700">Contato</a>
-            <a
-              href="https://ixc.topoficial.com.br/central_assinante_web/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-cyan-200 px-3 py-1 transition hover:border-cyan-500 hover:text-cyan-700"
-            >
-              Central do Assinante
-            </a>
-            <a href="/empresas" className="inline-flex items-center gap-1 rounded-full border border-cyan-200 px-3 py-1 transition hover:border-cyan-500 hover:text-cyan-700">
-              Empresas
-              <Building2 className="h-4 w-4" />
-            </a>
-          </nav>
-          <a
-            href="https://api.whatsapp.com/send/?phone=5575999534296"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl bg-cyan-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyan-600"
-          >
-            WhatsApp
-          </a>
-        </div>
-      </header>
+      <SiteHeader
+        logoHref="#inicio"
+        logoClassName="h-15 w-auto"
+        navItems={[
+          { label: "Início", href: "#inicio" },
+          { label: "Planos", href: "#planos" },
+          { label: "Serviços", href: "#servicos" },
+          { label: "Sobre", href: "#sobre" },
+          { label: "Cobertura", href: "#cobertura" },
+          { label: "Contato", href: "#contato" },
+          {
+            label: "Central do Assinante",
+            href: "https://ixc.topoficial.com.br/central_assinante_web/login",
+            external: true,
+            variant: "outline",
+          },
+          {
+            label: "Empresas",
+            href: "/empresas",
+            variant: "outline",
+            icon: "building",
+          },
+        ]}
+        cta={{
+          label: "WhatsApp",
+          href: "https://api.whatsapp.com/send/?phone=5575999534296",
+          external: true,
+        }}
+      />
 
       <section id="inicio" className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.22),transparent_45%)]" />

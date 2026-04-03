@@ -1,4 +1,5 @@
 import { Building2, Clock3, Headset, Router, ShieldCheck, Workflow } from "lucide-react";
+import SiteHeader from "@/components/site-header";
 
 const corporatePlans = [
   {
@@ -83,21 +84,18 @@ export const metadata = {
 export default function EmpresasPage() {
   return (
     <main className="bg-white text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-cyan-100/90 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-10">
-          <a href="/" className="flex items-center gap-3">
-            <img src="/logos/topnet.png" alt="Topnet" className="h-14 w-auto" />
-          </a>
-          <a
-            href="https://api.whatsapp.com/send/?phone=5575999534296&text=Olá! Quero uma proposta corporativa da Topnet."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl bg-cyan-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyan-600"
-          >
-            Falar com comercial
-          </a>
-        </div>
-      </header>
+      <SiteHeader
+        logoHref="/"
+        navItems={[
+          { label: "Início", href: "/" },
+          { label: "Planos corporativos", href: "#planos-corporativos" },
+        ]}
+        cta={{
+          label: "Falar com comercial",
+          href: "https://api.whatsapp.com/send/?phone=5575999534296&text=Olá! Quero uma proposta corporativa da Topnet.",
+          external: true,
+        }}
+      />
 
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.20),transparent_45%)]" />
