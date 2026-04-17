@@ -1,6 +1,7 @@
 import { geistSans, geistMono, poppins } from "./ui/font";
-import localFont from "next/font/local";
 import "./ui/globals.css";
+import { THEME_STORAGE_KEY } from "@/lib/theme";
+import Script from "next/script";
 
 export const metadata = {
   metadataBase: new URL("https://topoficial.com.br"),
@@ -22,9 +23,9 @@ export const metadata = {
   creator: "Topnet",
   publisher: "Topnet",
   icons: {
-    icon: "/logos/topnet.png",
-    shortcut: "/logos/topnet.png",
-    apple: "/logos/topnet.png",
+    icon: "/images/logos/topnet.png",
+    shortcut: "/images/logos/topnet.png",
+    apple: "/images/logos/topnet.png",
   },
   openGraph: {
     type: "website",
@@ -36,7 +37,7 @@ export const metadata = {
     siteName: "Topnet",
     images: [
       {
-        url: "/logos/topnet.png",
+        url: "/images/logos/topnet.png",
         width: 1200,
         height: 630,
         alt: "Topnet",
@@ -48,17 +49,13 @@ export const metadata = {
     title: "Topnet | Internet Fibra Óptica",
     description:
       "Internet fibra óptica com cobertura regional, suporte rápido e planos para casa e empresa.",
-    images: ["/logos/topnet.png"],
+    images: ["/images/logos/topnet.png"],
   },
   alternates: {
     canonical: "https://topoficial.com.br",
   },
 };
 
-const myFont = localFont({
-  src: [{ path: "./../public/fonts/uxumregular.otf", weight: "400", style: "normal" }],
-  variable: "--font-uxum",
-});
 
 const schemaGraph = {
   "@context": "https://schema.org",
@@ -70,7 +67,7 @@ const schemaGraph = {
       url: "https://topoficial.com.br",
       logo: {
         "@type": "ImageObject",
-        url: "https://topoficial.com.br/logos/topnet.png",
+        url: "https://topoficial.com.br/images/logos/topnet.png",
       },
       description:
         "Provedor de internet com foco em fibra óptica, estabilidade e atendimento regional.",
@@ -98,17 +95,64 @@ const schemaGraph = {
   ],
 };
 
+const themeScript = `
+  (function () {
+    try {
+      var themeKey = "${THEME_STORAGE_KEY}";
+      var storedTheme = window.localStorage.getItem(themeKey);
+      var hasStoredTheme = storedTheme === "light" || storedTheme === "dark";
+      var preferredTheme = hasStoredTheme
+        ? storedTheme
+        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+      if (preferredTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      document.documentElement.dataset.theme = preferredTheme;
+    } catch (_error) {}
+  })();
+`;
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${myFont.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}>
         {children}
+
+        <div vw="" className="enabled">
+          <div vw-access-button="" className="active" />
+          <div vw-plugin-wrapper="">
+            <div className="vw-plugin-top-wrapper" />
+          </div>
+        </div>
+
+        <Script src="https://vlibras.gov.br/app/vlibras-plugin.js" strategy="afterInteractive" />
+        <Script id="vlibras-init" strategy="afterInteractive">
+          {`
+            (function initVLibras(retries) {
+              if (window.VLibras && window.VLibras.Widget) {
+                new window.VLibras.Widget("https://vlibras.gov.br/app");
+                return;
+              }
+
+              if (retries > 0) {
+                setTimeout(function () {
+                  initVLibras(retries - 1);
+                }, 200);
+              }
+            })(20);
+          `}
+        </Script>
       </body>
     </html>
   );
