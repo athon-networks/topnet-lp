@@ -1,7 +1,7 @@
 import { geistSans, geistMono, poppins } from "./ui/font";
 import "./ui/globals.css";
 import { THEME_STORAGE_KEY } from "@/lib/theme";
-import Script from "next/script";
+import VlibrasWidget from "@/components/vlibras-widget";
 
 export const metadata = {
   metadataBase: new URL("https://topoficial.com.br"),
@@ -128,31 +128,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}>
         {children}
-
-        <div vw="" className="enabled">
-          <div vw-access-button="" className="active" />
-          <div vw-plugin-wrapper="">
-            <div className="vw-plugin-top-wrapper" />
-          </div>
-        </div>
-
-        <Script src="https://vlibras.gov.br/app/vlibras-plugin.js" strategy="afterInteractive" />
-        <Script id="vlibras-init" strategy="afterInteractive">
-          {`
-            (function initVLibras(retries) {
-              if (window.VLibras && window.VLibras.Widget) {
-                new window.VLibras.Widget("https://vlibras.gov.br/app");
-                return;
-              }
-
-              if (retries > 0) {
-                setTimeout(function () {
-                  initVLibras(retries - 1);
-                }, 200);
-              }
-            })(20);
-          `}
-        </Script>
+        <VlibrasWidget />
       </body>
     </html>
   );
