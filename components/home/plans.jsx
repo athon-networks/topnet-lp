@@ -34,15 +34,7 @@ const plans = [
 
 export default function Plans() {
   return (
-    <section id="planos" className="relative overflow-hidden">
-      <img
-        src="/images/planos-fundo.avif"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover opacity-45"
-      />
-      <div className="absolute inset-0 bg-black/55" />
-
+    <section id="planos" className="relative overflow-hidden bg-slate-900 rounded-t-[70px] rounded-b-[70px]">
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 lg:px-10">
         <div className="mb-12 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-300">Planos de internet</p>
@@ -59,7 +51,7 @@ export default function Plans() {
               className={`relative flex flex-col rounded-3xl border p-7 shadow-[0_14px_35px_rgba(8,145,178,0.14)] transition hover:-translate-y-1 ${
                 plan.featured
                   ? "border-cyan-500 bg-cyan-500 text-white"
-                  : "border-cyan-100 bg-white text-slate-900"
+                  : "border-cyan-300/40 bg-slate-900 text-white"
               }`}
             >
               {plan.featured ? (
@@ -74,7 +66,7 @@ export default function Plans() {
                     src="/images/plano-400-destaque.avif"
                     alt=""
                     aria-hidden="true"
-                    className="absolute inset-0 h-full w-full rounded-3xl object-cover opacity-40"
+                    className="absolute inset-0 hidden h-full w-full rounded-3xl object-cover opacity-40 md:block"
                   />
                   <div className="absolute inset-0 rounded-3xl bg-cyan-900/35" />
                 </>
@@ -83,10 +75,10 @@ export default function Plans() {
               <div className="relative z-10 text-center">
                 <p className={`text-6xl font-bold leading-none ${plan.featured ? "text-white" : "text-cyan-300"}`}>{plan.speed}</p>
                 <p className={`mt-1 text-3xl font-bold ${plan.featured ? "text-cyan-100" : "text-cyan-300"}`}>mega</p>
-                <p className={`mt-2 text-lg font-semibold ${plan.featured ? "text-cyan-100" : "text-slate-700"}`}>{plan.area}</p>
+                <p className={`mt-2 text-lg font-semibold ${plan.featured ? "text-cyan-100" : "text-cyan-100"}`}>{plan.area}</p>
               </div>
 
-              <ul className={`relative z-10 mt-8 space-y-2 border-y py-5 text-sm ${plan.featured ? "border-cyan-300/40 text-cyan-50" : "border-cyan-100 text-slate-600"}`}>
+              <ul className={`relative z-10 mt-8 space-y-2 border-y py-5 text-sm ${plan.featured ? "border-cyan-300/40 text-cyan-50" : "border-cyan-300/40 text-cyan-50"}`}>
                 {plan.features.map((feature) => (
                   <li key={feature} className="text-center">{feature}</li>
                 ))}

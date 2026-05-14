@@ -81,7 +81,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="mt-3 inline-flex items-center gap-3 rounded-xl border border-cyan-300/35 bg-cyan-500/10 px-3 py-2 transition hover:bg-cyan-500/15"
             >
-              <img src="/images/logos/athon-networks.avif" alt="Athon Networks" className="h-8 w-auto rounded" />
+              <img src="/images/athonnetworks-white.png" alt="Athon Networks" className="h-8 w-auto rounded" />
               <span className="text-xs font-semibold uppercase tracking-[0.08em] text-cyan-100">
                 Esta empresa tem a consultoria da Athon Networks
               </span>

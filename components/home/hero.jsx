@@ -1,38 +1,41 @@
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.22),transparent_45%)]" />
-      <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-10 lg:py-28">
-        <div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Topnet</p>
-          <h1 className="font-uxum mb-6 text-4xl leading-tight text-slate-900 sm:text-5xl">
-            Internet fibra óptica para quem precisa de <span className="text-cyan-400">estabilidade</span> de verdade.
-          </h1>
-          <p className="mb-8 max-w-xl text-lg text-slate-600">
-            Planos para residências e empresas com atendimento próximo, velocidade consistente e equipe técnica pronta para ajudar.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="https://api.whatsapp.com/send/?phone=5575999534296"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl bg-cyan-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-600"
-            >
-              Falar com atendimento
-            </a>
-            <a href="#cobertura" className="rounded-xl border border-cyan-200 px-6 py-3 text-sm font-semibold text-cyan-700 transition hover:border-cyan-500">
-              Ver cobertura
-            </a>
-          </div>
-        </div>
+    <section id="inicio" className="relative overflow-hidden bg-white py-8 sm:py-10 lg:py-12">
+      <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-5 lg:px-6">
+        <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-cyan-100 shadow-[0_30px_80px_rgba(8,145,178,0.2)] sm:min-h-[520px]">
+          <img src="/images/hero.png" alt="Banner principal Topnet" className="absolute inset-0 h-full w-full object-cover" />
 
-        <div className="relative">
-          <div className="absolute -inset-4 rounded-3xl" />
-          <img
-            src="/images/internet-fibra-hero.avif"
-            alt="Atendimento e tecnologia de internet"
-            className="relative h-full min-h-[330px] w-full rounded-3xl border border-cyan-100 object-cover shadow-[0_24px_60px_rgba(8,145,178,0.18)]"
-          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/72 to-slate-950/10" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.3),transparent_40%)]" />
+
+          <div className="relative flex min-h-[420px] items-center p-8 sm:min-h-[520px] sm:p-12 lg:p-16">
+            <div className="max-w-xl">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Topnet</p>
+              <h1 className="font-uxum mb-6 text-4xl leading-tight text-white sm:text-5xl">
+                Internet fibra óptica com <span className="text-cyan-300">velocidade real</span> para sua casa e empresa.
+              </h1>
+              <p className="mb-8 text-lg text-slate-200">
+                Planos estáveis, atendimento próximo e suporte técnico rápido para você navegar sem dor de cabeça.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=5575999534296"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-cyan-500 px-7 py-3 text-sm font-semibold text-white transition hover:bg-cyan-600"
+                >
+                  Clique e confira os novos planos
+                </a>
+                <a
+                  href="#cobertura"
+                  className="rounded-full border border-cyan-200/70 px-7 py-3 text-sm font-semibold text-cyan-100 transition hover:border-cyan-300 hover:text-white"
+                >
+                  Ver cobertura
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

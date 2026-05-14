@@ -9,7 +9,7 @@ const offices = [
 
 export default function Coverage() {
   return (
-    <section id="cobertura" className="bg-slate-900 rounded-t-[70px] rounded-b-[70px]">
+    <section id="cobertura" className="bg-slate-900 rounded-t-[70px]">
       <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 lg:px-10">
         <h2 className="font-uxum text-3xl text-white sm:text-4xl">Cobertura regional</h2>
         <p className="mt-4 max-w-3xl text-slate-300">

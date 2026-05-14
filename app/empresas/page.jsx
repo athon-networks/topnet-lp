@@ -97,40 +97,42 @@ export default function EmpresasPage() {
         }}
       />
 
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.20),transparent_45%)]" />
-        <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-10">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-700">Topnet Empresas</p>
-            <h1 className="mt-3 text-4xl text-slate-900 sm:text-5xl">Conectividade corporativa para operações que não podem parar</h1>
-            <p className="mt-6 max-w-xl text-lg text-slate-600">
-              Planos e serviços para empresas com foco em estabilidade, suporte rápido e desempenho para sistemas críticos.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#planos-corporativos"
-                className="rounded-xl border border-cyan-200 px-6 py-3 text-sm font-semibold text-cyan-700 transition hover:border-cyan-500"
-              >
-                Ver planos corporativos
-              </a>
-              <a
-                href="https://api.whatsapp.com/send/?phone=5575999534296&text=Olá! Quero uma proposta corporativa da Topnet."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-xl bg-cyan-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-600"
-              >
-                Solicitar proposta
-              </a>
+      <section id="inicio" className="relative overflow-hidden bg-white py-8 sm:py-10 lg:py-12">
+        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-5 lg:px-6">
+          <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-cyan-100 shadow-[0_30px_80px_rgba(8,145,178,0.2)] sm:min-h-[520px]">
+            <img src="/images/hero-2.png" alt="Banner Topnet Empresas" className="absolute inset-0 h-full w-full object-cover" />
+
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/72 to-slate-950/10" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.3),transparent_40%)]" />
+
+            <div className="relative flex min-h-[420px] items-center p-8 sm:min-h-[520px] sm:p-12 lg:p-16">
+              <div className="max-w-xl">
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Topnet Empresas</p>
+                <h1 className="font-uxum mb-6 text-4xl leading-tight text-white sm:text-5xl">
+                  Conectividade corporativa para <span className="text-cyan-300">operações que não podem parar</span>.
+                </h1>
+                <p className="mb-8 text-lg text-slate-200">
+                  Planos e serviços para empresas com foco em estabilidade, suporte rápido e desempenho para sistemas críticos.
+                </p>
+
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href="#planos-corporativos"
+                    className="rounded-full border border-cyan-200/70 px-7 py-3 text-sm font-semibold text-cyan-100 transition hover:border-cyan-300 hover:text-white"
+                  >
+                    Ver planos corporativos
+                  </a>
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=5575999534296&text=Olá! Quero uma proposta corporativa da Topnet."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-cyan-500 px-7 py-3 text-sm font-semibold text-white transition hover:bg-cyan-600"
+                  >
+                    Solicitar proposta
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="rounded-3xl border border-cyan-100 bg-cyan-50 p-8">
-            <h2 className="text-2xl font-semibold text-slate-900">Para quem é indicado</h2>
-            <ul className="mt-4 space-y-3 text-slate-600">
-              <li>Comércio e varejo com operação de caixa constante</li>
-              <li>Escritórios e empresas com equipes conectadas</li>
-              <li>Clínicas, escolas e negócios com sistemas online</li>
-              <li>Empresas com necessidade de previsibilidade de rede</li>
-            </ul>
           </div>
         </div>
       </section>

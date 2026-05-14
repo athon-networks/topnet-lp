@@ -13,25 +13,19 @@ export default function SvasTicker() {
   const ticker = [...logos, ...logos];
 
   return (
-    <section className="border-y border-cyan-100 bg-cyan-50/60">
-      <div className="w-full py-10">
-        <div className="mb-6 px-4 text-center sm:px-6 lg:px-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700">SVAs inclusos</p>
-          <h2 className="mt-2 text-2xl text-slate-900 sm:text-3xl">Serviços que você encontra com a <span className="text-cyan-400">Topnet</span></h2>
-        </div>
+    <section className="py-6 sm:py-8">
+      <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-5 lg:px-6">
+        <div className="relative overflow-hidden rounded-2xl py-4 sm:py-5">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 sm:w-24" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 sm:w-24" />
 
-        <div className="relative overflow-hidden rounded-2xl border border-cyan-100 bg-white/70 py-4">
-          <div className="flex w-max items-center gap-4 svas-marquee">
+          <div className="flex w-max items-center gap-4 svas-marquee sm:gap-5">
             {ticker.map((logo, index) => (
               <article
                 key={`${logo.name}-${index}`}
-                className="logo-card flex h-16 min-w-[170px] items-center justify-center rounded-xl border border-cyan-100 bg-white px-4 text-center"
+                className="logo-card flex h-14 min-w-[150px] items-center justify-center rounded-xl bg-white/95 px-4 text-center sm:h-16 sm:min-w-[170px]"
               >
-                <img
-                  src={logo.src}
-                  alt={`Logo ${logo.name}`}
-                  className="h-8 w-auto object-contain"
-                />
+                <img src={logo.src} alt={`Logo ${logo.name}`} className="h-7 w-auto object-contain sm:h-8" />
               </article>
             ))}
           </div>
@@ -39,7 +33,7 @@ export default function SvasTicker() {
       </div>
       <style>{`
         .svas-marquee {
-          animation: svas-marquee 28s linear infinite;
+          animation: svas-marquee 30s linear infinite;
         }
 
         @keyframes svas-marquee {
