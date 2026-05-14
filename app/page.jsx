@@ -7,7 +7,6 @@ import Faq from "@/components/home/faq";
 import Footer from "@/components/home/footer";
 import GamerLatency from "@/components/home/gamer-latency";
 import Hero from "@/components/home/hero";
-import MobileWhatsAppCta from "@/components/home/mobile-whatsapp-cta";
 import Plans from "@/components/home/plans";
 import PromoArt from "@/components/home/promo-art";
 import Services from "@/components/home/services";
@@ -40,7 +39,6 @@ export default function Page() {
       <Faq />
       <Footer />
       <BackToTop />
-      <MobileWhatsAppCta />
     </main>
   );
 }
