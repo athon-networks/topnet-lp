@@ -1,6 +1,6 @@
 # Topnet Landing Page
 
-versão 2.0
+versão 2.1
 
 Landing page institucional da **Topnet**, focada em conversão via WhatsApp, apresentação de planos e cobertura regional.
 
