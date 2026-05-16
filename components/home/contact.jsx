@@ -30,8 +30,8 @@ export default function ContactSection() {
             </li>
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
-              <a href="mailto:contato@topnetbahia.com.br" className="underline decoration-cyan-200/60 underline-offset-4 hover:text-cyan-200">
-                contato@topnetbahia.com.br
+              <a href="mailto:contato@topoficial.com.br" className="underline decoration-cyan-200/60 underline-offset-4 hover:text-cyan-200">
+                contato@topoficial.com.br
               </a>
             </li>
           </ul>
